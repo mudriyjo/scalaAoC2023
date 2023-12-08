@@ -71,9 +71,9 @@ object Day7second {
     val lines = AdventOfCode.readLine(day, postfix)
     val res = for line <- lines yield textToGame(line)
     res.sorted.zipWithIndex.map {
-      case (game, i) =>  BigInt(game.bid) * BigInt((i + 1))
-    }
+      case (game, i) =>  game.bid * (i + 1)
+    }.sum
 
   @main def mainSecond: Unit =
-    println(execute(postfix).sum)
+    println(execute(postfix))
 }
