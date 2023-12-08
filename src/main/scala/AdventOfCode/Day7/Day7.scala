@@ -72,7 +72,6 @@ object Day7 {
   def execute(postfix: String) =
     val lines = AdventOfCode.readLine(day, postfix)
     val res = for line <- lines yield textToGame(line)
-    res.foreach(println)
     res.sorted.zipWithIndex.map {
       case (game, i) =>  BigInt(game.bid) * BigInt((i + 1))
     }
